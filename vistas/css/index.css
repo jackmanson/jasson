@@ -408,6 +408,15 @@ background-color: aqua;
     flex-direction: column;
     justify-content: center;
 }
+.containerTextExperienceSub{
+    box-sizing: content-box;
+}
+.containerTextExperienceSub > p {
+    font-size: var(--lg);
+}
+.containerTextExperienceSub > h4 {
+    padding-right: 20px;
+}
 .containerBoxExperienceWork_title{
     font-size: var(--xxlg);
     font-weight: 700;
@@ -438,6 +447,7 @@ background-color: aqua;
 .centrarBox{
     display: flex;
     justify-content: center;
+    box-sizing: content-box;
 }
 
 
@@ -632,3 +642,8 @@ medida que le coloques aplicara lo que se especifique */
     }
 
 } */
+@media (max-width: 700px){
+    .containerTextExperienceSub > h4 {
+        padding-right: 10px;
+    }
+}
