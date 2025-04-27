@@ -1,0 +1,66 @@
+/* O@import url(/vistas/fonts/CatalishHunteraItalic.otf); */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  /* font-family: 'Roboto', sans-serif; */
+  /*font-size: 62.5%;*/ /* COn esto la fuente tiene 10px */
+  font-size: 100%; /* Con esto la fuente tiene 16px */
+  background: var(--background-degrade);
+  color: var(--white);  
+
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300; /* 100 a 900*/
+  font-style: normal;
+}
+
+:root{
+  --white: #FFFFFF;
+  --black: #000000;
+  --azul: #1A50D7;
+  --azul-oscuro: #0a2a6a;
+  --blue-claro: #006aff;
+  --beige: #f7f4f4;
+  --charcol-claro: #828486;
+  --charcol-oscuro: #484848;
+  --charcol: hsl(204, 3%, 32%);
+  --charcol-oscuro2: #2d2b2b;
+  --celesteBajo: #4babff;
+  --celesteNeon: #42d3ff;
+  --celeste: #2b72f7;
+  --gris: #aeaeae;
+  --gris-claro:#d0d0d0;
+  --amarillo: #ffd600;
+  --rojo: #e30613;
+  --verde-claro: #bdd586;
+  --verdeNeon: #00ff55;
+  --azulNeon: #0095ff;
+  --titulo-degrade:  linear-gradient(to right, #f49a44,#d51d74);
+  --menu-degrade:  linear-gradient(hsl(204, 3%, 32%),#828486);
+  --background-degrade: linear-gradient(hsl(0, 0%, 0%),#080948);
+  --background-blackBlue: linear-gradient(hsl(247, 100%, 9%),#000000);
+  --background-transBlue: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, hsl(211, 100%, 50%) 50%, rgba(0, 0, 0, 0) 100%);
+  --background-radialBlue: radial-gradient(circle,rgba(40, 102, 201, 1) 0%, rgba(6, 6, 90, 1) 52%, rgba(0, 212, 255, 0) 100%);
+  --background-linealBlue: linear-gradient(133deg,rgba(38, 101, 201, 1) 0%, rgba(5, 50, 156, 1) 53%, rgba(0, 212, 255, 0) 100%);
+  --background-linealBlue1: linear-gradient(133deg,rgba(0, 0, 0, 1) 0%, rgba(80, 75, 156, 0.88) 100%);
+  --background-linealBlue2: linear-gradient(133deg,rgba(0, 30, 255, 1) 0%, rgba(0, 255, 123, 0) 100%);
+  --background-linealBlue3: radial-gradient(circle,rgba(40, 102, 201, 1) 0%, rgba(6, 6, 90, 1) 52%, rgba(0, 213, 255, 0.144) 100%);
+  --background-linealBlue4: linear-gradient(182deg,rgb(8, 63, 203) 0%, rgba(1, 3, 95, 0.78) 57%, rgba(94, 99, 122, 0.11) 100%);
+  --background-gradeCard: radial-gradient(circle,rgba(46, 44, 44, 1) 0%, rgba(35, 88, 222, 0.52) 100%);
+  --xsm: 0.625rem; /* 10px */
+  --msm: 0.75rem; /* 12px */
+  --sm: 0.875rem; /* 14px */
+  --md: 1rem; /* 16px */
+  --lg: 1.125rem; /*18px */
+  --slg: 1.25rem; /* 20px */
+  --sslg: 1.35rem; /* 20px */
+  --ssslg: 1.5rem;
+  --mlg: 1.75rem; /* 28px */
+  --xlg: 2rem; /*32px */
+  --xxlg: 2.5rem; /*40px */
+  --xxxlg: 3rem; /*48px */
+}

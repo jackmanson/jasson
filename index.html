@@ -1,67 +1,459 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+<title>Belove Tusilagos</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyswords" description="tecnologies,tecnologia,development,desarrollo,app,js,java,spring,html,css,software,hardware"/>
-	<link rel="shortcut icon" type="image/png" href="images/jass.jpg"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Montserrat:ital,wght@0,100;0,200;0,300;0,600;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css"/>
-    <title>Jasson Polo</title>
-    <style>
-        /* contenido css */
-    </style>
+    <meta name="keyswords" description="maquillaje, cortes, peinados, tintes, cepillados, manicure, pedicure, alisados, color, look, esthetic, limpieza facial, anti-caida, anti-caspa"/>
+
+	<!-- Font Family APIS Google -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+	<!-- Font Family APIS Google -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+
+	<!-- FONT FAMILY JOST  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	
+	<!-- Font Family  ROBOTO -->
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+	<!-- icono de la pestana -->
+    <link rel="shortcut icon" type="image/png" href="vistas/img/ico_jassIcono.png"/>
+
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="vistas/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
+	<!-- ESTILOS ANIMATE -->
+	<link rel="stylesheet" href="vistas/css_animate/animate.css">
+
+	<!-- Bootstrap  STYLE CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+
+	<!-- estilos CSS -->
+	<link rel="stylesheet" type="text/css" href="vistas//css/index.css"/>
+	
+	<!-- LIBRERIAS DE CDN VUE JS -->
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	
 </head>
+
 <body>
-<section id="main">
-    <aside>
-        <img src="images/jassPhoto3.jpg" alt=""/>
-        <h1 class="titulo">Jasson Polo</h1>
-        <p>I'm graphic designer and software development.</p>
-        <nav>
-            <ul>
-                <li>   Acerca de mi </li>
-                <li>   Estudios </li>
-                <li>   Portafolio </li>
-                <li>   Contacto </li>
-            </ul>
-        </nav>
-        <div class="redSocal">
-            <ul>
-                <li><img src="" alt="Twitter"></li>
-                <li><img src="" alt="Github"></li>
-                <li><img src="" alt="Instagram"></li>
-                <li><img src="" alt="Linkedin"></li>
-                <li><img src="" alt="Telegram"></li>
-                <li><img src="" alt="Whatsapp"></li>
-            </ul>
-        </div>
-    </aside>
-    <section id="contenido1">
-        <header>
-            <div><img src="" alt=""></div>
-            <h2>Hello. Mi nombre es Jasson</h2>
-            <article>
-                <p>Les presento mi portafolio, donde muestro algunos trabajos que he realizado. Soy de Lima y me encanta la tecnologia y todo el mundo relacionado al desarrollo de aplicaciones para mejorear el mundo.</p>
-            </article>
-        </header>
-        <section>
-            <form>
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre"/>
-                <label for="asunto">Asunto</label>
-                <input type="text" name="asunto"/>
-            </form>
-        </section>
-    </section>
-</section>
-<footer>
+	
+	<section id="containerFull">
+		
+		<!-- BARRA DE ICONOS -->
+		<section class="containerIconos">
+			<div>
+				<i class="fa fa-bars" aria-hidden="true" v-on:click="MenuOpen" v-if="lateralClose == 1"></i>
+				<i class="fa fa-times" aria-hidden="true" v-on:click="MenuClose" v-if="lateralOpen == 1"></i>
+			</div>
+			<div>
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<a href="https://api.whatsapp.com/send?phone=927890721&text=Hola, quiero hacerte una consulta!" target="_blank">
+					<i class="fa fa-whatsapp" aria-hidden="true"></i>
+					
+				</a>
+				<a href="mailto:jassonpolo@impresstotal.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+			</div>
+		</section>
+		
+		<!-- MENU -->
+		<header class="containerMenu" v-if="menuLateralSwitch == 1">
+			<nav class="containerMenu_nav">
+				<a href=""><img src="" alt="" class="containerMenu_logo2"></a>
+				
+				<img src="vistas/img/jassIcono.jpg" alt="usuario_sesion" class="containerMenu_imageUser">
+				<p class="containerMenu_nomUser">Software Developer</p>
+				<p class="containerMenu_subtitulo">🔥 Available for work 🔥</p>
+				
+				<ul>
+					<a href="#home"><li id="itemHome" v-on:click="seccionHome"> [  Home  ] </li></a>
+					<a href="#aboutme"><li id="itemAbout" v-on:click="seccionAboutMe"> &hearts;  About me </li></a>
+					<a href="#experience"><li id="itemSkills" v-on:click="seccionHome"> &spades;  Experience </li></a>
+					<a href="#projects"><li id="itemProjects" v-on:click="seccionHome"> &clubs;  Projects </li></a>
+					<a href="mailto:jassonpolo@impresstotal.com"><li id="itemContact" v-on:click="seccionHome"> &diams;  Contact </li></a>
+				</ul>
+			</nav>
+			<a href="mailto:jassonpolo@impresstotal.com">
+				<button class="containerMenu_buttonSession"><i class="fa fa-envelope-o" aria-hidden="true"></i>  Contact Me</button>
+			</a>
+		</header>
+		
+		<!-- espacio vacio barra menu -->
+		<div class="_48pixles"></div>
+		
+		<!-- SECCION PRINCIPAL -->
+		<section class="containerLista" v-on:click="OcultaMenuSwitch">
 
+			<!-- CONTENIDO  -->
+			<section class="" >
+				
+				<a name="home"></a>
+				<!-- HOME SOFTWARE DEVELOPER-->
+				<section class="container" v-if="Home == 1">
+
+					<!-- HEADER CABECERA -->
+					<div class="row cajaFlex containerBoxHome text-center">
+						<section class="col-5">
+							<a href="#"><img src="vistas/img/jass_2.jpg" alt="Vistas" class="container_Photo"></a>
+						</section>
+						
+						<section class="col containerBoxHome_card" v-if="Home == 1">
+							<!-- TITULO -->
+							<header class="containerBoxHome_header">
+								<h6 class="containerMenu_subtitulo">✳️ Available for work</h6>
+								<!-- <h2 class="containerLista_title">Software Developer🔥</h2> -->
+								<h1 class="containerLista_title">Jasson Polo🔥</h1>
+								<p>
+									I'm <span class="containerBoxHome_header-textResaltar">Systems Engineer</span> with 7 years of experience, creating innovative solutions, <span class="containerBoxHome_header-textResaltar">optimizing processes</span>, and designing efficient and engaging digital experiences.☕💡🚀
+								</p>
+								<a href="mailto:jassonpolo@impresstotal.com">
+									<button type="button" class="btn btn-primary">
+										<i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Me
+									</button>
+								</a>
+								<a href="#aboutme" v-on:click="ButtonAboutMe">
+									<button type="button" class="btn btn-outline-info">
+										<i class="fa fa-user" aria-hidden="true"></i> About Me
+									</button>
+								</a>
+
+							</header>
+						</section>
+					</div>
+
+					<!-- CAJA DOBLE PROJECT Y TECH -->
+					<div class="row cajaFlex_Project_Tech ">
+						<!-- PROJECT -->
+						<section class="col  containerBoxHome_card containerBoxHome cajaProjectMargin" v-if="Home == 1">
+							<!-- TITULO -->
+							<header class="containerBoxHome_header">
+								<h2 class="containerLista_title"><i class="fa fa-github-square" aria-hidden="true"></i> Projects</h2>
+								<p>I enjoy turning ideas into <span class="containerBoxHome_header-textResaltar">functional projects</span>. Here I share developments where I combine technology, design, and creativity for <span class="containerBoxHome_header-textResaltar">innovative solutions</span>.🎯</p>
+								<a href="#"><img src="vistas/img/webColage1.png" alt="Example web" class="imgWebColagewebColage"></a>
+							</header>
+						</section>
+						
+						<!-- TECH STACK  -->
+						<section class="col containerBoxHome_card_Tech_Stack cajaFlex_Stack">
+							<section class="row">
+								<section class="col containerBoxHome_teckStack marginContainerTeckStack_card_1">
+									<!-- TITULO -->
+									<h2 class="containerLista_title"><i class="fa fa-star" aria-hidden="true"></i> <span class="containerBoxHome_header-textResaltar">Tech</span> Stack</h2>
+									<div class="">
+										<button type="button" class="btn btn-light buttonControl">Html 5</button>
+										<button type="button" class="btn btn-light buttonControl">JavaScript</button>
+										<button type="button" class="btn btn-light buttonControl">CSS</button>
+										<button type="button" class="btn btn-light buttonControl">TypeScript</button>
+										<button type="button" class="btn btn-light buttonControl">VUE JS</button>
+										<button type="button" class="btn btn-light buttonControl">Bootstrap</button>
+										<button type="button" class="btn btn-light buttonControl">Java</button>
+										<button type="button" class="btn btn-light buttonControl">Spring</button>
+										<button type="button" class="btn btn-light buttonControl">PHP</button>
+										<button type="button" class="btn btn-light buttonControl">MySql</button>
+										<button type="button" class="btn btn-light buttonControl">Git</button>
+										<button type="button" class="btn btn-light buttonControl">Markdown</button>
+										<button type="button" class="btn btn-light buttonControl">Wordpress</button>
+										<button type="button" class="btn btn-light buttonControl">XD</button>
+									</div>
+								</section>
+							</section>
+							<section class="row col ">
+								<section class="col containerBoxHome_teckStack_fondo1 marginContainerTeckStack_card_2">
+									<!-- TITULO -->
+									<h2 class="containerLista_title"><i class="fa fa-heart" aria-hidden="true"></i> <span class="containerBoxHome_header-textResaltar">Download</span> free projects from my GitHub!</h2>
+									<p><span class="containerBoxHome_header-textResaltar">"Download free projects</span> from my GitHub! Explore, innovate, and access open-source solutions ready to use."</p>
+								</section>
+								<section class="col containerBoxHome_teckStack_fondo2 marginContainerTeckStack_card_3">
+									<!-- TITULO -->
+									<h2 class="containerLista_title"><i class="fa fa-check" aria-hidden="true"></i> <span class="containerBoxHome_header-textResaltar">Other</span> related skills</h2>
+									<div>
+										<button type="button" class="btn btn-light buttonControl">Illustrator</button>
+										<button type="button" class="btn btn-light buttonControl">Photoshop</button>
+										<button type="button" class="btn btn-light buttonControl">Inkscape</button>
+										<button type="button" class="btn btn-light buttonControl">Gimp</button>
+										<button type="button" class="btn btn-light buttonControl">Scrum</button>
+									</div>
+								</section>
+							</section>
+						</section>
+					</div>
+				</section>
+				
+				<a name="experience"></a>
+				<!--EXPERIENCE WORK -->
+				<section class="container " v-if="Home == 1">
+
+					<div class=" cajaFlex containerBoxExperienceWork ">
+						<!-- HEADER CABECERA -->
+						<section class="text-center">
+							<h2 class="containerBoxExperienceWork_title "><i class="fa fa-th-list" aria-hidden="true"></i> Experience <span class="containerBoxHome_header-textResaltar">Work</span></h2>
+						</section>
+						<!-- CUERPO DE HISTORIAL WORK -->
+						<section class="row">
+							<section class="col row">
+								<!-- linea de tiempo grafico -->
+								<div class="col-4 centrarBox">
+									<div class="line_draw"><div class="circle_draw"></div></div>
+								</div>
+								<div class="col">
+									<h3 class="containerBoxExperienceWork_subtitle"><span class="containerBoxHome_header-textResaltar">Software Developer</span></h3>
+									<h4>JUNGLAFARI E.I.R.L.</h4>
+									<p>2022 - Present</p>
+								</div>
+							</section>
+							<section class="col containerBoxHome_card" v-if="Home == 1">
+								<!-- TITULO -->
+								<header class="col containerBoxHome_header">
+									<p>I drive the <span class="containerBoxHome_header-textResaltar">strategic planning,</span> development, and execution of software projects, optimizing administrative processes and enhancing digital services. With a focus on <span class="containerBoxHome_header-textResaltar">efficiency and innovation,</span> I oversee technology platforms, provide expert support, and coordinate development teams to deliver impactful and scalable solutions.🚀🎯</p>
+								</header>
+							</section>
+						</section>
+						<section class="row">
+							<section class="col row">
+								<!-- linea de tiempo grafico -->
+								<div class="col-4 centrarBox">
+									<div class="line_draw"><div class="circle_draw"></div></div>
+								</div>
+								<div class="col">
+									<h3 class="containerBoxExperienceWork_subtitle"><span class="containerBoxHome_header-textResaltar">Graphic Design</span></h3>
+									<h4>COMERCIAL MONELY E.I.R.L.</h4>
+									<p>2016 - 2021</p>
+								</div>
+							</section>
+							<section class="col containerBoxHome_card" v-if="Home == 1">
+								<!-- TITULO -->
+								<header class="col containerBoxHome_header">
+									<p>I worked as a <span class="containerBoxHome_header-textResaltar">graphic designer,</span> but I also did IT work, supporting departments with <span class="containerBoxHome_header-textResaltar">technological requirements.</span> I was responsible for delivering products according to client contracts.☕💡🎯</p>
+								</header>
+							</section>
+						</section>
+					</div>
+
+				</section>
+
+
+				<a name="projects"></a>
+				<!-- WORK FINISHED PROJECT  -->
+				<section class="container " v-if="Home == 1">
+
+					<div class=" cajaFlex containerBoxFinishedProject text-center">
+						<!-- HEADER CABECERA -->
+						<section class="">
+							<h2 class="containerBoxFinishedProject_title"><i class="fa fa-bookmark" aria-hidden="true"></i> Project <span class="containerBoxHome_header-textResaltar">Completed</span></h2>
+						</section>
+						<!-- CUERPO DE HISTORIAL WORK -->
+						<section class="">
+							<p class="containerBoxParrafo">Turning ideas into real projects is <span class="containerBoxHome_header-textResaltar">my passion.</span> In this space, I invite you to explore some of my creations, where <span class="containerBoxHome_header-textResaltar">technology, design, and creativity</span> come together to bring innovative solutions to life. Discover and <span class="containerBoxHome_header-textResaltar">get inspired!</span></p>
+						</section>
+					</div>
+					
+					<!-- CARD WORD PROJECT -->
+					<section class="container text-center marginCajaGrandeBotton">
+						<div class="row">
+							<!-- card one -->
+							<div class="col card" >
+								<img src="vistas/img/web_vitrina_01.png" class="card-img-top imgProjecto" alt="Web vitrina">
+								<div class="card-body">
+								<h5 class="card-title">Web Showcase</h5>
+								<p class="card-text">Discover a modern and stylish website, designed as a digital showcase to present products with innovation, elegance, and exceptional visual appeal.</p>
+								<a href="vistas/docs/emanuelecasalboni.pdf" target="_blank" class="btn btn-primary buttonCardPreject">Show More</a>
+								</div>
+							</div>
+	
+							<!-- card two -->
+							<div class="col card" >
+								<img src="vistas/img/web_vitrina_02.png" class="card-img-top imgProjecto" alt="Web vitrina">
+								<div class="card-body">
+								<h5 class="card-title">Ecommerce</h5>
+								<p class="card-text">Explore a modern and sophisticated eCommerce platform, designed to showcase products with innovation, style, and an engaging visual experience.</p>
+								<a href="vistas/docs/fotocasalboni.pdf" target="_blank" class="btn btn-primary buttonCardPreject">Show More</a>
+								</div>
+							</div>
+							
+							<!-- card three -->
+							<div class="col card" >
+								<img src="vistas/img/web_vitrina_03.png" class="card-img-top imgProjecto" alt="Web vitrina">
+								<div class="card-body">
+								<h5 class="card-title">Landing Page</h5>
+								<p class="card-text">Discover a high-impact landing page, designed to captivate visitors, highlight key offerings, and drive engagement with a sleek, modern aesthetic.</p>
+								<a href="vistas/docs/lapiadadikino.pdf" target="_blank" class="btn btn-primary buttonCardPreject">Show More</a>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				
+				
+
+				
+				
+				<!-- ABOUT ME -->
+				<a name="aboutme"></a>
+				<section class="container containerAboutMe text-center" v-if="AboutMe == 1">
+					<!-- TITULO -->
+					<section class="cajaFoto">
+						<a href="#"><img src="vistas/img/jass_2.jpg" alt="Vistas" class="container_Photo"></a>
+					</section>
+					<h6 class="containerMenu_subtitulo">✍️ {{ title_lista }} ✍️</h6>
+					<h2 class="containerLista_title"><span class="containerBoxHome_header-textResaltar">Jasson Polo</span></h2>
+					
+					<p>I'm <span class="containerBoxHome_header-textResaltar">Systems Engineer</span> with 7 years of experience, creating innovative solutions, <span class="containerBoxHome_header-textResaltar">optimizing processes</span>, and designing efficient and engaging digital experiences.☕💡🚀</p>
+
+					<h3 class="containerLista_title textoLeftAbout"><span class="containerBoxHome_header-textResaltar">About</span> Me</h3>
+					<p class="parrafoAbout">Since I was a child, I've always loved computers. It all started when, in my country, Peru, the government organized a bicycle race for Non-Smoking Day. The top 100 places were to be raffled off for prizes such as cars, televisions, trucks, polo shirts, caps, stereos, and computers. I was so excited that I was able to convince my parents to take me to participate, and when they drew the prizes, I won a computer because it was what I wanted most, and I was praying for luck. That's where it all began. Computers always excite me, and I think I always understood that they are a universe without limits.</p>
+					
+					<h3 class="containerLista_title textoLeftAbout">My <span class="containerBoxHome_header-textResaltar">Beginnings</span> 🖥</h3>
+					<p class="parrafoAbout">My first experience with a programming language was Visual Basic in my summer classes at a high school near my city. It was the first time I created a form and logic that processed and finalized a result. It was simply magical, like having a superpower that not everyone knows about, but you know it has no limits. Then came other languages ​​like Java and JavaScript, when many still didn't consider them languages ​​as such, but now everyone loves them. The rest is history, exploring new technological universes that made me fall in love, and I want to continue on this path. Every line of code and best practices are made with love, period.</p>
+
+					
+					<h3 class="containerLista_title textoLeftAbout">We will work side by side to achieve the best <span class="containerBoxHome_header-textResaltar">functional result.</span> 🎯</h3>
+
+					<!--EXPERIENCE WORK -->
+					<section class="container ">
+
+						<div class=" cajaFlex containerBoxExperienceWork ">
+							<!-- HEADER CABECERA -->
+							<section class="text-center">
+								<h2 class="containerBoxExperienceWork_title "><i class="fa fa-th-list" aria-hidden="true"></i> Experience <span class="containerBoxHome_header-textResaltar">Work</span></h2>
+							</section>
+							<!-- CUERPO DE HISTORIAL WORK -->
+							<section class="row">
+								<section class="col row">
+									<!-- linea de tiempo grafico -->
+									<div class="col-4 centrarBox">
+										<div class="line_draw"><div class="circle_draw"></div></div>
+									</div>
+									<div class="col">
+										<h3 class="containerBoxExperienceWork_subtitle"><span class="containerBoxHome_header-textResaltar">Software Developer</span></h3>
+										<h4>JUNGLAFARI E.I.R.L.</h4>
+										<p>2022 - Present</p>
+									</div>
+								</section>
+								<section class="col containerBoxHome_card">
+									<!-- TITULO -->
+									<header class="col containerBoxHome_header">
+										<p>I drive the <span class="containerBoxHome_header-textResaltar">strategic planning,</span> development, and execution of software projects, optimizing administrative processes and enhancing digital services. With a focus on <span class="containerBoxHome_header-textResaltar">efficiency and innovation,</span> I oversee technology platforms, provide expert support, and coordinate development teams to deliver impactful and scalable solutions.🚀🎯</p>
+									</header>
+								</section>
+							</section>
+							<section class="row">
+								<section class="col row">
+									<!-- linea de tiempo grafico -->
+									<div class="col-4 centrarBox">
+										<div class="line_draw"><div class="circle_draw"></div></div>
+									</div>
+									<div class="col">
+										<h3 class="containerBoxExperienceWork_subtitle"><span class="containerBoxHome_header-textResaltar">Graphic Design</span></h3>
+										<h4>COMERCIAL MONELY E.I.R.L.</h4>
+										<p>2016 - 2021</p>
+									</div>
+								</section>
+								<section class="col containerBoxHome_card">
+									<!-- TITULO -->
+									<header class="col containerBoxHome_header">
+										<p>I worked as a <span class="containerBoxHome_header-textResaltar">graphic designer,</span> but I also did IT work, supporting departments with <span class="containerBoxHome_header-textResaltar">technological requirements.</span> I was responsible for delivering products according to client contracts.☕💡🎯</p>
+									</header>
+								</section>
+							</section>
+						</div>
+
+					</section>
+
+					<h3 class="containerLista_title textoLeftAbout"><i class="fa fa-star" aria-hidden="true"></i> <span class="containerBoxHome_header-textResaltar">Stack</span> Technological</h3>
+					<div class="about_bottom">
+						<button type="button" class="btn btn-light buttonControl">Html 5</button>
+						<button type="button" class="btn btn-light buttonControl">JavaScript</button>
+						<button type="button" class="btn btn-light buttonControl">CSS</button>
+						<button type="button" class="btn btn-light buttonControl">TypeScript</button>
+						<button type="button" class="btn btn-light buttonControl">VUE JS</button>
+						<button type="button" class="btn btn-light buttonControl">Bootstrap</button>
+						<button type="button" class="btn btn-light buttonControl">Java</button>
+						<button type="button" class="btn btn-light buttonControl">Spring</button>
+						<button type="button" class="btn btn-light buttonControl">PHP</button>
+						<button type="button" class="btn btn-light buttonControl">MySql</button>
+						<button type="button" class="btn btn-light buttonControl">Git</button>
+						<button type="button" class="btn btn-light buttonControl">Markdown</button>
+						<button type="button" class="btn btn-light buttonControl">Wordpress</button>
+						<button type="button" class="btn btn-light buttonControl">XD</button>
+						<button type="button" class="btn btn-light buttonControl">Illustrator</button>
+						<button type="button" class="btn btn-light buttonControl">Photoshop</button>
+						<button type="button" class="btn btn-light buttonControl">Inkscape</button>
+						<button type="button" class="btn btn-light buttonControl">Gimp</button>
+						<button type="button" class="btn btn-light buttonControl">Scrum</button>
+					</div>
+
+
+				</section>
+				
+				
+
+
+			</section>
+
+		</section>
+
+	</section>
+
+
+<!-- INICIO DEL FOOTER -->
+<footer class=" miFooter">
+	<!-- p-5 mt-5 bg-dark-subtle text-dark-emphasis -->
+	<section>
+		<div class="fondoFooter">
+			<div class="container ">
+				<div class="row align-items-center">
+					<div class="col-7">
+						<h2 class="containerLista_title titleFooter">Let’s bring your vision to life. Ready to take it to the next level? <span class="containerBoxHome_header-textResaltar">Let’s make it happen together.</span>🚀</h2>
+					</div>
+					<div class="col text-center">
+						<a href="mailto:jassonpolo@impresstotal.com"><button type="button" class="btn btn-primary botonFooter"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Me</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="p-3 mb-0 text-bg-dark p-3">
+			<article class="text-center">
+				<div class="container text-center">
+					<div class="row align-items-center">
+						<div class="col">
+							Developer by Jasson Polo, with VIU JS
+						</div>
+						<div class="col">
+							© Copyright 2017  -  2025
+						</div>
+						<div class="col iconosFooter">
+							<a href="mailto:jassonpolo@impresstotal.com" class="iconoFoo"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+							<i class="fa fa-facebook-official" aria-hidden="true"></i>
+							<a href="https://api.whatsapp.com/send?phone=927890721&text=Hola, quiero hacerte una consulta!" target="_blank" class="iconoFoo"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+	</section>
+	
 </footer>
-    
 
-    <script src="js/index.js"></script>
+
+<!-- javascript BOOTSSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+<!-- Js Procesos -->
+<script type='text/javascript' src="vistas/js/prima.js"></script>
+
 </body>
 </html>
+
+
+
+
